@@ -18,13 +18,12 @@ class Hangman extends Component {
   constructor(props) {
     super(props);
     this.state = { nWrong: 0, guessed: new Set(), answer: "apple" };
-    this.handleGuess = this.handleGuess.bind(this);
   }
 
   /** guessedWord: show current-state of word:
     if guessed letters are {a,p,e}, show "app_e" for "apple"
   */
-  guessedWord() {
+  guessedWord = () => {
     return this.state.answer
       .split("")
       .map(ltr => (this.state.guessed.has(ltr) ? ltr : "_"));
@@ -34,7 +33,7 @@ class Hangman extends Component {
     - add to guessed letters
     - if not in answer, increase number-wrong guesses
   */
-  handleGuess(evt) {
+  handleGuess = (evt) => {
     let ltr = evt.target.value;
     this.setState(st => ({
       guessed: st.guessed.add(ltr),
@@ -49,6 +48,7 @@ class Hangman extends Component {
         value={ltr}
         onClick={this.handleGuess}
         disabled={this.state.guessed.has(ltr)}
+        key={crypto.randomUUID()}
       >
         {ltr}
       </button>
