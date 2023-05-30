@@ -123,12 +123,12 @@ class Hangman extends Component {
                     </div>
 
                     {/* hint */}
-                    <p className="Hangman-hint" style={{ ...this.displayFlex(!this.state.won) }}>
+                    <p className="Hangman-hint" style={{ ...this.displayFlex(!(this.state.won || this.state.gameOver)) }}>
                         {this.state.hint}
                     </p>
 
                     {/* word showcase and keyboard */}
-                    <p className="Hangman-word">{this.guessedWord()}</p>
+                    <p className="Hangman-word" >{this.guessedWord()}</p>
                     <p className="Hangman-btns">{this.generateButtons()}</p>
                 </div>
                 <div className="blink-green completed" style={{...this.displayFlex(randomWords.length == this.state.wordNum - 1)}}>

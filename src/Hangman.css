@@ -121,23 +121,40 @@
 }
 
 .blink {
+    /* font-weight: 600;
+    font-size: 110%;
+    animation: blink 2s ease infinite; */
     font-weight: 600;
     font-size: 110%;
     animation: blink 2s ease infinite;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: rgb(255, 59, 59);
+    box-shadow: 0px 0px 0px rgb(255, 59, 59);
+    margin-right: 20px;
 }
 
 @keyframes blink {
     25% {
-        color: black;
+        background-color: black;
+        color: rgb(255, 59, 59);
+        box-shadow: 0px 0px 0px rgb(255, 59, 59);
     }
     50% {
-        color: red;
+        background-color: rgb(255, 59, 59);
+        color: white;
+        box-shadow: 5px 5px 50px rgb(255, 59, 59);
     }
     75% {
-        color: red;
+        background-color: rgb(255, 59, 59);
+        color: white;
+        box-shadow: 5px 5px 50px rgb(255, 59, 59);
     }
     100% {
-        color: black;
+        background-color: black;
+        color: rgb(255, 59, 59);
+        box-shadow: 0px 0px 0px rgb(255, 59, 59);
     }
 }
 
@@ -200,7 +217,7 @@
     font-family: sans-serif;
     padding: 20px 30px;
     line-height: 130%;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 @keyframes zoom {
@@ -236,7 +253,7 @@
 @media (max-width: 500px) {
     .Hangman {
         width: 340px;
-        scale: .7;
+        scale: 0.7;
     }
 
     .Hangman h1 {
